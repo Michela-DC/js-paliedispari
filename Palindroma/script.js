@@ -7,7 +7,6 @@ console.log(userWord);
 
 testPalindroma(userWord);
 
-
 function testPalindroma (word){
     // Devo salvare ogni singola lettera della parola in una posizione di un array inizialmente vuoto devo usare split 
     const wordArray = word.split('');
