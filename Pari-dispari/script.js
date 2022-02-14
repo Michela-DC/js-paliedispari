@@ -5,22 +5,22 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
 // Dichiariamo chi ha vinto.
 
-let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5')); 
-console.log(userNumber);
+let userNumber; 
 
-//verifico che abbia inserito un numero in cifre e che sia da 1 a 5 
-if( isNaN(userNumber) || userNumber < 1 || userNumber > 5 ){ 
-    console.log(`${userNumber} non soddisfa le condizioni richieste`);
+//creo un ciclo do-while che continua a chiedere di inserire il numero finché non vengono rispettate le condizioni richieste
+do{
+    userNumber = parseInt(prompt('Inserisci un numero da 1 a 5')); 
+    console.log(userNumber);
+    
+} while( isNaN(userNumber) || userNumber < 1 || userNumber > 5 )
 
-} else{
-    const computerNumber = randomNumber();
-    console.log(computerNumber)
-    
-    const somma = userNumber + computerNumber;
-    console.log(somma);
-    
-    pariDispari(somma);
-}
+const computerNumber = randomNumber();
+console.log(computerNumber);
+
+const somma = userNumber + computerNumber;
+console.log(`${userNumber} + ${computerNumber}  = ${somma}`);
+
+pariDispari(somma);
 
 // FUNZIONI
 function randomNumber (){
@@ -37,3 +37,25 @@ function pariDispari (number) {
         console.log('pari');
     }
 }
+
+
+/*
+USANDO IF-ELSE
+
+let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5')); 
+
+if( isNaN(userNumber) || userNumber < 1 || userNumber > 5 ){ 
+    console.log(`${userNumber} non soddisfa le condizioni richieste`);
+
+} else{
+    const computerNumber = randomNumber();
+    console.log(computerNumber)
+    
+    const somma = userNumber + computerNumber;
+    console.log(somma);
+    
+    pariDispari(somma);
+}
+*/
+
+
