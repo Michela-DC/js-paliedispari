@@ -9,21 +9,21 @@ let userNumber = parseInt(prompt('Inserisci un numero da 1 a 5'));
 console.log(userNumber);
 
 //verifico che abbia inserito un numero in cifre e che sia da 1 a 5 
-while( isNaN(userNumber) || userNumber < 1 || userNumber > 5 ){ 
+if( isNaN(userNumber) || userNumber < 1 || userNumber > 5 ){ 
     console.log(`${userNumber} non soddisfa le condizioni richieste`);
-    userNumber = prompt('Il numero deve andare da 1 e 5 ed deve essere in CIFRE');
+
+} else{
+    const computerNumber = randomNumber();
+    console.log(computerNumber)
+    
+    const somma = userNumber + computerNumber;
+    console.log(somma);
+    
+    pariDispari(somma);
 }
 
-const computerNumber = randomNumber();
-console.log(computerNumber)
-
-const somma = userNumber + computerNumber;
-console.log(somma);
-
-pariDispari(somma);
-
 // FUNZIONI
-function randomNumber (r){
+function randomNumber (){
     const number = Math.floor( Math.random()* 5 + 1 );
     
     return number;
