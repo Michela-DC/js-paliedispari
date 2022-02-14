@@ -22,9 +22,9 @@ function testPalindroma (word){
     
     // confronto le due parola e se sono uguali allora è una parola palindroma
     if (word === reverseWord){
-        return console.log('La parola è palindroma!');
+        console.log('La parola è palindroma!');
     
     }else{
-        return console.log('La parola NON è palindroma!');
+        console.log('La parola NON è palindroma!');
     }
 }
