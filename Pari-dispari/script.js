@@ -14,7 +14,7 @@ do{
     
 } while( isNaN(userNumber) || userNumber < 1 || userNumber > 5 )
 
-const computerNumber = randomNumber();
+const computerNumber = randomNumber(1,5);
 console.log(computerNumber);
 
 const somma = userNumber + computerNumber;
@@ -23,8 +23,8 @@ console.log(`${userNumber} + ${computerNumber}  = ${somma}`);
 pariDispari(somma);
 
 // FUNZIONI
-function randomNumber (){
-    const number = Math.floor( Math.random()* 5 + 1 );
+function randomNumber (minNumber, maxNumber){
+    const number = Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber);
     
     return number;
 }
