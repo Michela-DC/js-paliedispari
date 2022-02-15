@@ -6,7 +6,6 @@
 // Dichiariamo chi ha vinto.
 
 
-// FUNZIONI
 function randomNumber (minNumber, maxNumber){
     const number = Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber);
     
@@ -15,7 +14,7 @@ function randomNumber (minNumber, maxNumber){
 
 function pariDispari (number) {
 
-    if (number % 2 != 0 ){
+    if (number % 2 === 0 ){
         return true;
     }
     
@@ -26,6 +25,9 @@ function pariDispari (number) {
 
 
 let userNumber; 
+
+const choice = prompt('Scegli pari o dispari').trim().toLowerCase();
+console.log(choice);
 
 //creo un ciclo do-while che continua a chiedere di inserire il numero finché non vengono rispettate le condizioni richieste
 do{
@@ -41,10 +43,12 @@ const somma = userNumber + computerNumber;
 console.log(`${userNumber} + ${computerNumber}  = ${somma}`);
 
 
-if(pariDispari(somma)){
-    console.log('dispari');
+if(choice === 'pari' && pariDispari(somma)){
+    console.log('Pari! Hai vinto!');
+} else if (choice === 'dispari' && !pariDispari(somma)) {
+    console.log('Dispari! Hai vinto!');
 } else {
-    console.log('pari');
+    console.log('Hai perso...');
 }
 
 
