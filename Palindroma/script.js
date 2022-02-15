@@ -5,7 +5,12 @@
 const userWord = prompt('Inserisci una parola:');
 console.log(userWord);
 
-testPalindroma(userWord);
+if (testPalindroma(userWord)){ //se la funzione mi ritprna true allora la parola è palindroma
+    console.log('La parola è palindroma!');
+
+}else{
+    console.log('La parola NON è palindroma!');
+}
 
 function testPalindroma (word){
     // Devo salvare ogni singola lettera della parola in una posizione di un array inizialmente vuoto devo usare split 
@@ -22,9 +27,8 @@ function testPalindroma (word){
     
     // confronto le due parola e se sono uguali allora è una parola palindroma
     if (word === reverseWord){
-        console.log('La parola è palindroma!');
-    
+        return true;
     }else{
-        console.log('La parola NON è palindroma!');
+        return false;
     }
 }
