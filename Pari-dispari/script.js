@@ -5,6 +5,26 @@
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
 // Dichiariamo chi ha vinto.
 
+
+// FUNZIONI
+function randomNumber (minNumber, maxNumber){
+    const number = Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    
+    return number;
+}
+
+function pariDispari (number) {
+
+    if (number % 2 != 0 ){
+        return true;
+    }
+    
+    return false;
+    // una volta che la funzione esegue il return tutto quello che viene dopo non viene eseguito  
+    //quindi in questo caso NON c'è bisogno di mettere l'else
+}
+
+
 let userNumber; 
 
 //creo un ciclo do-while che continua a chiedere di inserire il numero finché non vengono rispettate le condizioni richieste
@@ -20,22 +40,11 @@ console.log(computerNumber);
 const somma = userNumber + computerNumber;
 console.log(`${userNumber} + ${computerNumber}  = ${somma}`);
 
-pariDispari(somma);
 
-// FUNZIONI
-function randomNumber (minNumber, maxNumber){
-    const number = Math.floor( Math.random() * (maxNumber - minNumber + 1) + minNumber);
-    
-    return number;
-}
-
-function pariDispari (number) {
-
-    if (number % 2 != 0 ){
-        console.log('dispari');
-    }else{
-        console.log('pari');
-    }
+if(pariDispari(somma)){
+    console.log('dispari');
+} else {
+    console.log('pari');
 }
 
 
